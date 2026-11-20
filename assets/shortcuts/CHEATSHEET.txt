@@ -1,0 +1,38 @@
+FEDORA KDE KEYBOARD WORKFLOW
+Super = Windows / Meta key
+
+Super+Enter                 Terminal
+Super+Alt+Enter             Tmux terminal
+Super+Shift+B               Browser
+Super+Shift+F               Files
+Super+Shift+N               Editor
+Super+Shift+T               System Monitor
+Super+Space                 KRunner
+Super+K                     This reference
+Super+Ctrl+K                KDE shortcut settings
+
+Super+Arrow                 Focus a window in that direction
+Super+Shift+Arrow           Quick tile a window
+Super+T                     Open KDE's manual tile editor
+Super+F                     Fullscreen
+Super+Alt+F                 Maximize
+Super+W / Super+Q / Alt+F4   Close window
+Super+1..9,0                Workspace 1..10, when available
+Super+Shift+1..9,0           Move to workspace and follow
+Super+Tab / Super+Shift+Tab  Next / previous workspace
+Super+Ctrl+Tab              Former workspace
+Print / Super+Ctrl+Alt+C    Flameshot capture, save and clipboard
+
+Workspace keys apply to the first ten available workspaces.
+Desktop zoom shortcuts are disabled by the default profile.
+This uses KDE manual tiling. Automatic tiling is a separate optional extension.
+
+TMUX
+Prefix = Ctrl+Space or Ctrl+B
+Prefix h / v               Split top-bottom / side-by-side
+Prefix c / r / d           New window / rename / detach
+Prefix q / ?               Reload config / list bindings
+Alt+1..9                   Select tmux window
+Ctrl+Alt+Arrows            Focus pane
+Ctrl+Alt+Shift+Arrows      Resize pane
+Prefix [                   Copy mode (v select, y copy, q exit)

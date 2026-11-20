@@ -1,0 +1,59 @@
+name: QA
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    name: Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.14']
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check shell syntax and public files
+        run: |
+          bash -n setup.sh
+          python3 scripts/check-public-files.py
+          git diff --check
+      - name: Test disposable-home installs and restores
+        run: python3 -m unittest discover -s tests -v
+      - name: Test workspace shortcuts
+        run: node tests/test_kwin.js
+
+  fedora:
+    name: Fedora 44 and KDE file formats
+    runs-on: ubuntu-latest
+    container: fedora:44
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Install test tools
+        run: dnf install -y git python3 kf6-kconfig desktop-file-utils nodejs shadow-utils util-linux
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Check required validators
+        run: |
+          command -v kreadconfig6
+          command -v desktop-file-validate
+      - name: Run tests as a desktop user
+        run: |
+          useradd --create-home qa
+          runuser -u qa -- python3 -m unittest discover -s tests -v
+          runuser -u qa -- node tests/test_kwin.js
+          python3 scripts/check-public-files.py

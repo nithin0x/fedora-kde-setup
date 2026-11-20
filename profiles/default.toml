@@ -1,0 +1,14 @@
+# Copy to setup.local.toml for personal changes (that file is ignored by Git).
+modules = ["theme", "terminal", "shortcuts"]
+font = "monospace"
+font_size = 11
+workspaces = 10
+disable_desktop_zoom_shortcuts = true
+
+# Commands are argument arrays, executed without a shell.
+[apps]
+terminal = ["alacritty"]
+browser = ["firefox", "--new-window"]
+files = ["dolphin"]
+editor = ["kate"]
+monitor = ["plasma-systemmonitor"]

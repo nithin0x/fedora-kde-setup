@@ -1,0 +1,18 @@
+/* Lumon color overlay, using the system GTK theme for widgets. */
+@define-color theme_bg_color #16242d;
+@define-color theme_fg_color #d6e2ee;
+@define-color theme_base_color #101b21;
+@define-color theme_text_color #d6e2ee;
+@define-color theme_selected_bg_color #243d56;
+@define-color theme_selected_fg_color #f2fcff;
+@define-color accent_color #8bc9eb;
+@define-color accent_bg_color #243d56;
+@define-color accent_fg_color #f2fcff;
+@define-color window_bg_color #16242d;
+@define-color window_fg_color #d6e2ee;
+@define-color view_bg_color #101b21;
+@define-color view_fg_color #d6e2ee;
+@define-color headerbar_bg_color #16242d;
+@define-color headerbar_fg_color #d6e2ee;
+@define-color popover_bg_color #1b2d40;
+@define-color popover_fg_color #d6e2ee;
