@@ -64,4 +64,3 @@ shortcut checks and the public-file check on pushes and pull requests.
 
 Original files use the [MIT license](LICENSE). The bundled LazyVim starter keeps
 its Apache 2.0 license; see [third-party notices](THIRD_PARTY_NOTICES.md).
-# fedora-kde-setup
